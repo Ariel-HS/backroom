@@ -25,12 +25,19 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipSprite();
-        Jump();
     }
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+    }
+
+    void OnJump()
+    {
+        if(isGrounded())
+            {
+                myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpPower);
+            }
     }
 
     void Run()
@@ -45,17 +52,6 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = Vector3.one;
         else if (moveInput.x < -0.01f)
             transform.localScale = new Vector3(-1,1,1);
-    }
-
-    void Jump()
-    {
-        if(moveInput.y > 0.01f)
-        {
-            if(isGrounded())
-                {
-                    myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpPower);
-                }
-        }
     }
 
     private bool isGrounded()
