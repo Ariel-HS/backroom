@@ -44,6 +44,12 @@ TagManager:
   - name: Bakcground
     uniqueID: 1882266603
     locked: 0
+  - name: Water
+    uniqueID: 1317761409
+    locked: 0
   - name: Platform
     uniqueID: 3038705239
+    locked: 0
+  - name: Player
+    uniqueID: 2223890819
     locked: 0
