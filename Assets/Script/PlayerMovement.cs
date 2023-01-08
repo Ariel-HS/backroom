@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 jumpInput;
     Rigidbody2D myRigidbody;
     CapsuleCollider2D capsuleCollider;
+    Animator anim;
 
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpPower = 15f;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipSprite();
+
+        anim.SetBool("isRunning", moveInput.x != 0);
     }
 
     void OnMove(InputValue value)
