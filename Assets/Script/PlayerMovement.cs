@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1,1,1);
     }
 
-    private bool isGrounded()
+    private bool isGrounded()/// cek apakah di bawah ada ground/platform
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0, Vector2.down, 0.01f, platformLayer);
         return raycastHit.collider != null;
