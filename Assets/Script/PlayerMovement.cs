@@ -34,8 +34,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipSprite()
     {
-
-        bool playerHasHorizontalMove = Mathf.Abs(myRigidbody.velocity.x)>Mathf.Epsilon;
-        transform.localScale = new Vector2 (Mathf.Sign(myRigidbody.velocity.x), 1f);
+        if(moveInput.x > 0.01f)
+            transform.localScale = Vector3.one;
+        else if (moveInput.x < -0.01f)
+            transform.localScale = new Vector3(-1,1,1);
     }
 }
