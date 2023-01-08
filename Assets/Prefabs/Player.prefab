@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5682608710058537334}
-  m_LocalRotation: {x: -0.016366057, y: 0, z: 0, w: 0.99986607}
+  m_LocalRotation: {x: -0.016361669, y: 0, z: 0, w: 0.9998662}
   m_LocalPosition: {x: -8.361535, y: 1.2389486, z: 0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -99,7 +99,7 @@ SpriteRenderer:
   m_SortingLayerID: -2071076477
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1045240218, guid: deab504cefde001419051f64f796df9e, type: 3}
+  m_Sprite: {fileID: -6811470, guid: deab504cefde001419051f64f796df9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -144,7 +144,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4540825, y: 0.511985}
+  m_Offset: {x: -0.05, y: 0.39}
   m_Size: {x: 0.4769392, y: 0.9765661}
   m_Direction: 0
 --- !u!114 &-5613298504898392265
@@ -171,7 +171,63 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6bbe1526-9751-4e31-910e-db0ad4d551ab
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8881497-f752-4a74-91c2-b18f40910ea7
+    m_ActionName: Player/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4b875776-eb35-4ef6-9670-ecf09f89342f
+    m_ActionName: Player/Fire[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 96b0442a-cede-4164-bce8-988cde965e46
+    m_ActionName: Player/Jump[/Keyboard/space,/Keyboard/w,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 85b8debf-7580-4430-bb3f-081f6623a350
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 77ba491d-e22c-4ab8-ac66-4afda44aa7c9
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d42d7027-1e88-41b8-b5f1-384ad57827e9
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a2a7a987-a9b9-43c2-b362-e09a79d016d2
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba4b6d58-9a7c-4ae7-a761-e006d6d9b6bf
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4f250bc6-ddfe-454c-88a4-7638a0ba7896
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6858c2a0-e0d2-4ae0-841e-623e0608f580
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5a0c993f-31a1-4d25-91cd-59e4c4ca4d25
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e8f17431-35cf-4f7d-90dd-c005f5ee87cb
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f0d57c14-f200-41d8-a3ab-6714f0023416
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -207,3 +263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 10
   jumpPower: 15
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 64

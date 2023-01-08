@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Coins
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Platform
     uniqueID: 3038705239
+    locked: 0
+  - name: Foreground
+    uniqueID: 4099634309
     locked: 0
   - name: Player
     uniqueID: 2223890819
