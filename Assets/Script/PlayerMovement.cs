@@ -6,12 +6,18 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     Vector2 moveInput; 
+    Vector2 jumpInput;
     Rigidbody2D myRigidbody;
+    CapsuleCollider2D capsuleCollider;
 
     [SerializeField] float runSpeed = 10f;
-    void Start()
+    [SerializeField] float jumpPower = 15f;
+    [SerializeField] private LayerMask platformLayer;
+
+    void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -19,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipSprite();
+        Jump();
     }
 
     void OnMove(InputValue value)
@@ -38,5 +45,22 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = Vector3.one;
         else if (moveInput.x < -0.01f)
             transform.localScale = new Vector3(-1,1,1);
+    }
+
+    void Jump()
+    {
+        if(moveInput.y > 0.01f)
+        {
+            if(isGrounded())
+                {
+                    myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpPower);
+                }
+        }
+    }
+
+    private bool isGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0, Vector2.down, 0.01f, platformLayer);
+        return raycastHit.collider != null;
     }
 }
