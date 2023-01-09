@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    [SerializeField] private Transform previousRoom;
+    /*[SerializeField] private Transform previousRoom;
     [SerializeField] private Transform nextRoom;
     [SerializeField] private CameraController cam;
 
@@ -12,5 +12,5 @@ public class Trigger : MonoBehaviour
     {
         if(other.tag == "Player")
             cam.MoveToNewRoom(nextRoom);
-    }
+    }*/
 }

@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
-    private float currentPosY;
-    private Vector3 velocity = Vector3.zero;
+    [SerializeField] private float followSpeed = 10f;
+    public float yOffset = 1f;
+    public Transform target;
 
     private void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, new Vector3(transform.position.x, currentPosY, transform.position.z), 
-        ref velocity, speed);
+        Vector3 newPos = new Vector3(target.position.x, target.position.y + yOffset, -10f);
+        transform.position = Vector3.Slerp(transform.position, newPos, followSpeed*Time.deltaTime);
     }
 
-    public void MoveToNewRoom(Transform _newRoom)
-    {
-        currentPosY = _newRoom.position.y;
-    }
 }
