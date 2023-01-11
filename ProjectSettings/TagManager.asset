@@ -6,17 +6,19 @@ TagManager:
   tags:
   - Coins
   - Enemy
+  - WeakPoint
+  - PlayerSprites
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Platform
-  - 
-  - 
-  - 
+  - Enemy
+  - Coins
+  - Ground
   - 
   - 
   - 
